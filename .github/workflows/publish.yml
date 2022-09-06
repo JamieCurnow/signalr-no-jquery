@@ -1,4 +1,4 @@
-name: Publish to private github package
+name: Publish to npm
 
 # only publish on release
 on:
