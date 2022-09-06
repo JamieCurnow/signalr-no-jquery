@@ -1,7 +1,7 @@
 {
     "name": "@jamiecurnow/signalr-no-jquery",
     "description": "JavaScript SignalR client without jQuery dependency",
-    "version": "0.4.0",
+    "version": "0.4.1",
     "author": {
         "name": "Pawel",
         "url": "https://github.com/dvlp"
