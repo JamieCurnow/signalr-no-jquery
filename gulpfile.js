@@ -1,20 +1,17 @@
-import path from 'path';
-import { EOL } from 'os';
-import { fileURLToPath } from 'url';
-import { createRequire } from 'module';
+const path = require('path');
+const { EOL } = require('os');
+const { fileURLToPath } = require('url');
+const { createRequire } = require('module');
 
-import gulp from 'gulp';
+const gulp = require('gulp');
 
-import pipeline from 'gulp-pipe';
-import clean from 'gulp-clean';
-import rename from 'gulp-rename';
-import header from 'gulp-header';
-import footer from 'gulp-footer';
-import replace from 'gulp-replace';
-import swc from 'gulp-swc';
-
-const require = createRequire(import.meta.url);
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const pipeline = require('gulp-pipe');
+const clean = require('gulp-clean');
+const rename = require('gulp-rename');
+const header = require('gulp-header');
+const footer = require('gulp-footer');
+const replace = require('gulp-replace');
+const swc = require('gulp-swc');
 
 const getPackageDir = packageName => path.dirname(require.resolve(`${packageName}/package.json`));
 
@@ -67,6 +64,7 @@ const copyShimCommonJs = () => pipeline([gulp.src(shimPath), swcPipe('commonjs')
 
 const copyTypings = () => pipeline([gulp.src(`${srcDir}/signalR.d.ts`), gulp.dest(destDir)]);
 
-export const build = gulp.series(clearTempDir, getSignalR, buildSignalR, buildSignalRCommonJs, clearTempDir);
+const build = gulp.series(clearTempDir, getSignalR, buildSignalR, buildSignalRCommonJs, clearTempDir);
+exports.build = build;
 
-export default gulp.series(clearDestDir, build, copyShim, copyShimCommonJs, copyTypings);
+exports.default = gulp.series(clearDestDir, build, copyShim, copyShimCommonJs, copyTypings);
