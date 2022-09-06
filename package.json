@@ -58,5 +58,8 @@
         "lint-staged": "12.1.5",
         "prettier": "2.5.1",
         "signalr": "2.4.2"
+    },
+    "optionalDependencies": {
+        "@swc/core-linux-x64-gnu": "^1.2.160"
     }
 }

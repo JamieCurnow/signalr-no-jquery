@@ -1,0 +1,33 @@
+name: Test build
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  unit:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [16]
+
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@master
+
+      - name: Cache node_modules 📦
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install project dependencies 👨🏻‍💻
+        run: npm ci
+
+      - name: Test build 🧪
+        run: npm run build
