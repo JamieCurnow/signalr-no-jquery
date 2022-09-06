@@ -1,5 +1,5 @@
 {
-    "name": "@cojam/signalr-no-jquery",
+    "name": "@jamiecurnow/signalr-no-jquery",
     "description": "JavaScript SignalR client without jQuery dependency",
     "type": "module",
     "version": "0.4.0",
@@ -8,12 +8,12 @@
         "url": "https://github.com/dvlp"
     },
     "contributors": [
-        "Dmitry <dmitry@cojam.ru> (https://e965.ru)"
+        "Jamie Curnow <jamie@island-web.ca>"
     ],
     "bugs": {
-        "url": "https://github.com/cojamru/signalr-no-jquery/issues"
+        "url": "https://github.com/JamieCurnow/signalr-no-jquery/issues"
     },
-    "homepage": "https://github.com/cojamru/signalr-no-jquery",
+    "homepage": "https://github.com/JamieCurnow/signalr-no-jquery",
     "keywords": [
         "signalr"
     ],
@@ -26,7 +26,7 @@
     ],
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/cojamru/signalr-no-jquery.git"
+        "url": "git+https://github.com/JamieCurnow/signalr-no-jquery.git"
     },
     "scripts": {
         "build": "gulp",
