@@ -1,7 +1,7 @@
 'use strict';
 
-const jQueryDeferred = require('jquery-deferred');
-const jQueryParam = require('jquery-param');
+import jQueryDeferred from 'jquery-deferred';
+import jQueryParam from 'jquery-param';
 
 const jqueryFunction = function (subject) {
     let events = subject.events || {};
